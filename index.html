@@ -1,0 +1,148 @@
+<!doctype html>
+<head>
+<meta charset="utf-8" />
+<title>Cookie</title>
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="css/cookielaw.css"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookielaw.js"></script>
+<script>
+function listCookies() {
+    var theCookies = document.cookie.split(';');
+    var aString = '';
+    for (var i = 1 ; i <= theCookies.length; i++) {
+        aString += i + ' ' + theCookies[i-1] + "\n";
+    }
+    return aString;
+}
+</script>
+</head>
+<body>
+<div id="test" style="width:500px"></div>
+<div style="padding:20px;">
+<h1>CookieLaw yet another gracefully plugin... :)</h1>
+<div class="box">
+<h2>Cookie debug</h2>
+<pre><code><script> document.write(listCookies()) </script></code></pre>
+</div>
+<div class="box">
+<h2>Tecnici (necessary)</h2>
+<div class="necessary-yes">
+Cookie accettati
+</div>
+<div class="necessary-no">
+Cookie non accettati
+</div>
+</div>
+<div class="box">
+<h2>Social (social)</h2>
+<div class="social-yes">
+Cookie accettati
+</div>
+<div class="social-no">
+Cookie non accettati
+</div>
+</div>
+<div class="box">
+<h2>Analisi (analytics)</h2>
+<div class="analytics-yes">
+Cookie accettati
+</div>
+<div class="analytics-no">
+Cookie non accettati
+</div>
+</div>
+<div class="box">
+<h2>Contenuti (advertising)</h2>
+<div class="advertising-yes">
+Cookie accettati
+</div>
+<div class="advertising-no">
+Cookie non accettati
+</div>
+</div>
+<div class="box">
+<h2>Utilizzo</h2>
+<pre><code>
+$(function() {
+	jQuery().cookieLaw();
+});
+</code>
+
+file da incorporare
+<ul>
+<li>jQuery</li>
+<li>jquery.cookielaw.js</li>
+<li>cookielaw.css (da editare secondo le proprie esigenze)
+</ul>
+</pre>
+</div>
+<div class="box">
+<h2>Opzioni</h2>
+<pre><code>
+defaultText: "Cliccando sul bottone [Accetto] approvi l'utilizzo dei cookie sul nostro sito per una migliore esperienza di navigazione.",
+modalText: "Le tue preferenze riguardo questo sito",
+okButton: "Accetto",
+saveButton: "Salva",
+closeButton: "Chiudi",
+moreButton: "Visualizza dettagli",
+hideMoreButton: "Nascondi dettagli",
+moreInfo: "I cookie sono piccoli file, memorizzati nel computer durante la navigazione, utili a salvare le preferenze e a migliorare le prestazioni dei siti web. In questo modo si ottimizza l'esperienza di navigazione da parte dell'utente.",
+displayUrl: false, /* se true visualizza il link alla pagina privacy */
+moreUrl: "", /* link alla pagina privacy */
+textUrl: "Visualizza privacy",
+location: "top", /* bottom */
+cookieExpiry: 365, /* giorni */
+cookieName: "CookieLaw",
+initOnScroll:false, /* auto accept sullo scroll se true */
+defaultCookies: {
+	necessary: {
+		title: "Tecnici",
+		description: "Cookie essenziali per l'erogazione dei servizi richiesti. Sono necessari per il corretto funzionamento del sito e non richiedono consenso da parte dell'utente."
+	},
+	social: {
+		title: "Social",
+		description: "Cookie di terze parti che permettono l'interazione con i social network (Google Plus, Facebook, Twitter, Pinterest). Questi cookie mettono a disposizione dell'utente la possibilità di interagire e condividere contenuti ritenuti di interesse."
+	},
+	analytics: {
+		title: "Analisi",
+		description: "Cookie di terze parti che permettono di analizzare come gli utenti utilizzano il sito per operare in modo da offrire la migliore esperienza possibile."
+	},
+	advertising: {
+		title: "Contenuti",
+		description: "Cookie di terze parti che possono essere utilizzati per offrire un'esperienza d'uso più ricca all'utente tramite contenuti multimediali (Youtube, Vimeo o simili)."
+	}
+}
+</code></pre>
+</div>
+<p>
+<a class="cookie-law-button" id="cookie-law-modal" href="#">modifica preferenze cookie*</a>
+<a class="cookie-law-button" onclick="delete_cookie();return false;" href="#">elimina cookie**</a>
+</p>
+<p>*Nella realtà dovrebbe essere visualizzato quando i cookie sono accettati<br />
+**Serve solo per il debug<p>
+</div>
+<script>
+$(function() {
+	jQuery().cookieLaw({
+		displayUrl: true,
+		moreUrl: "http://fulviocorsini.it",
+		textUrl: "Visualizza pagina privacy"
+	});
+});
+
+function delete_cookie () {
+	var cookies = document.cookie.split(";");
+	date = new Date();
+	date.setDate(date.getDate() - 1);
+        for (var i = 0; i < cookies.length; i++){   
+            var spcook =  cookies[i].split("=");
+			document.cookie = spcook[0] + "=; path=/; expires=" + date                              
+        }
+	setTimeout("location.reload(true);", 50)
+}
+
+</script>
+</body>
+</html>

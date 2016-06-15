@@ -1,0 +1,154 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600);
+/* begin not necessary - to be removed */
+body {
+font-family: 'Source Sans Pro', sans-serif;
+font-weight:300
+}
+pre {
+white-space: pre-wrap;
+white-space: -moz-pre-wrap;
+white-space: -o-pre-wrap;
+word-wrap: break-word;}
+
+code {
+font-family: Courier, 'New Courier', monospace;
+font-size: 12px;}
+.box {
+padding:10px 20px;
+border:1px solid #acacac;
+margin-bottom:10px
+}
+.necessary-yes,.social-yes,.analytics-yes,.advertising-yes {color:green;font-weight:600}
+.necessary-no,.social-no,.analytics-no,.advertising-no {color:red;font-weight:600}
+h1, h2 {font-weight:600}
+h2 {margin:5px 0}
+/* end not necessary - to be removed */
+
+#cookie-law-container {
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 999999;
+	display:none;
+	width:100%;
+	color: #f1f1f1;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+	line-height:1.4em;
+}
+
+#cookie-law-container.top {
+	top: 0;
+	bottom: auto;
+	border-top-width: 0px;
+	border-bottom-width: 1px;
+}
+
+#cookie-law-container.absolute {
+	position: absolute;
+}
+
+#cookie-law-container a {
+	color: #3B89C7;
+}
+
+#cookie-law-box {
+	background:#222;
+    padding: 15px 20px;
+}
+
+#cookie-law-message {
+	float: left;
+}
+
+a.moreUrl {
+	color:#f39c12!important;
+	text-decoration:none;
+	border-bottom:1px dotted #f39c12;
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+	transition: 0.25s;
+	font-weight:600
+}
+
+a.moreUrl:hover {
+	color:#f1c40f!important;
+}
+
+a.cookie-law-button {
+	padding: 4px 10px;
+	background-color:#f39c12;
+	color: #ffffff!important;
+	text-decoration: none;
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+	transition: 0.25s;
+	font-weight:600
+}
+
+a.cookie-law-button:hover {
+	background:#f1c40f;
+	color:#f2f2f2;
+}
+
+a#cookie-law-button-more {
+	margin-left: 10px;
+}
+
+#cookie-law-info {
+	display: none;
+	background:#333;
+}
+
+#cookie-law-info {
+	padding: 15px 20px;
+}
+#cookie-law-text {
+	width:100%;
+}
+
+.div-checkbox.inactive {
+    color: #ababab!important
+} 
+.div-checkbox {
+	padding:5px 0!important;
+	-webkit-transition: 0.6s;
+	-moz-transition: 0.6s;
+	transition: 0.6s;
+}
+.div-checkbox > div {
+	padding-left:17px;
+}
+#cookie-law-info label {
+    display: block;
+    font-style:italic;
+	font-weight:bold;
+}
+#cookie-law-info input[type=checkbox] {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top:-3px;
+    *overflow: hidden;
+}
+
+@media only screen
+and (max-width : 940px) 
+{
+#cookie-law-container {
+	position: absolute;
+}
+	#cookie-law-message {
+		float:none;
+	}
+	#cookie-law-action {
+		float:none;
+		margin:10px auto 0;
+	}
+}
