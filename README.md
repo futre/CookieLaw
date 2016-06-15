@@ -1,4 +1,4 @@
 # CookieLaw
 CookieLaw yet another cookies plugin... :)
 
-work in progress...
+CookieLaw is a simple and easy solution to comply with European Law
